@@ -4,24 +4,51 @@ let randomNumber = Math.floor(Math.random() * 3)
 //assign number to selection
 function computerPlay() {
     if (randomNumber === 0) {
-   return "Rock"
+   return "rock"
      } else if (randomNumber === 1) {
-        return "Paper"
+        return "paper"
    } else if (randomNumber === 2) {
-    return "Scissors"
+    return "scissors"
    } else {
-    return "Error"
+    return "error"
    }  
 }
-console.log(computerPlay())
+
+let computerSelection = computerPlay();
+let playerSelection = "ROck"
+
+function playGame (computerSelection, playerSelection) {
+
+    if (computerSelection === playerSelection.toLowerCase()) {
+        return "draw"
+    } else if (computerSelection == "rock") {
+        if (playerSelection.toLowerCase() == "scissors") {
+            return "you lose!"
+        } else if (playerSelection.toLowerCase() == "paper") {
+            return "you win!"
+        } } else if (computerSelection == "paper") {
+            if (playerSelection.toLowerCase() == "scissors") {
+                return "you win!" 
+            } else if (playerSelection.toLowerCase() == "rock") {
+                return "you lose!"
+            }
+        }   else if (computerSelection == "scissors") {
+            if (playerSelection.toLowerCase() == "paper") {
+                return "you lose!"
+            } else if (playerSelection.toLowerCase() == "rock") {
+                return "you win!"
+            }
+        }
+    }
+
+function fullGame () {
+    for (let i=0; i<=5; i++) {
+
+    }
+
+}
+
+
+console.log(playGame(computerSelection, playerSelection));
 //get string from user with their selection
 
-//if that selection beats user selection
-//comp wins
-//print comp wins
-//if that selection equals user
-//draw
-//print draw
-//if that selection loses to user selection
-//user wins
-//print user wins
